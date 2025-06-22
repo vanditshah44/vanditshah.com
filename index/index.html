@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coming Soon - Vandit Shah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      background: radial-gradient(circle at center, #1a1a2e, #0f2027);
+      color: #ffffff;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      perspective: 1000px;
+    }
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+      transform: rotateX(10deg);
+    }
+    p {
+      font-size: 1.4rem;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      line-height: 1.8;
+      letter-spacing: 0.05rem;
+      transform: rotateX(5deg);
+    }
+    .glow {
+      font-size: 1rem;
+      padding: 0.85rem 2.2rem;
+      border: 2px solid #00ffcc;
+      background: rgba(0, 255, 204, 0.05);
+      color: #00ffcc;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+    }
+    .glow:hover {
+      background: #00ffcc;
+      color: #000;
+      box-shadow: 0 0 30px #00ffcc, 0 0 50px #00ffcc;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
-    Coming Soon
+  <h1>🚀 Vandit Shah</h1>
+  <p>My digital playground is getting ready. <br><br>This will be home a journey. Stay tuned. ;]</p>
+  <button class="glow" onclick="alert('Stay tuned. Magic loading...')">Coming Soon</button>
 </body>
 </html>
