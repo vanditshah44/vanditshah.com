@@ -1,138 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon - Vandit Shah</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vandit Shah - Loading the Future</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      min-height: 100vh;
-      background: radial-gradient(circle at center, #0f2027, #203a43);
-      color: #ffffff;
-      font-family: 'Orbitron', sans-serif;
+      background: #0f0f0f;
+      color: #00ff00;
+      font-family: 'Press Start 2P', monospace;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      text-align: center;
-      padding: 2rem;
+      height: 100vh;
       overflow: hidden;
-      position: relative;
+      text-align: center;
     }
-    canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
-    h1, p, .glow {
-      z-index: 1;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
-      transform-style: preserve-3d;
-      transform: translateZ(50px);
-      animation: pulse 3s infinite;
-    }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
+
+    .terminal-box {
+      background: #111;
+      border: 4px solid #00ff00;
+      padding: 2rem;
       max-width: 90vw;
-      line-height: 1.8;
-      letter-spacing: 0.05rem;
-      transform: translateZ(30px);
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00ff00;
     }
-    .glow {
-      font-size: 1rem;
-      padding: 1rem 2.5rem;
-      border: 2px solid #00ffcc;
-      background: rgba(0, 255, 204, 0.1);
-      color: #00ffcc;
-      text-transform: uppercase;
-      letter-spacing: 1.3px;
+
+    h1 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .emoji {
+      font-size: 2rem;
+    }
+
+    .button {
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background-color: transparent;
+      border: 2px solid #00ff00;
+      color: #00ff00;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 0.7rem;
       cursor: pointer;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
-      transition: 0.3s ease-in-out;
+      transition: background 0.3s, color 0.3s;
     }
-    .glow:hover {
-      background: #00ffcc;
-      color: #000;
-      transform: scale(1.1);
-      box-shadow: 0 0 60px #00ffcc;
+
+    .button:hover {
+      background-color: #00ff00;
+      color: #111;
     }
-    @keyframes pulse {
-      0%, 100% { text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc; }
-      50% { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; }
+
+    img {
+      width: 80px;
+      margin-bottom: 1rem;
     }
+
     @media (min-width: 768px) {
       h1 {
-        font-size: 4rem;
+        font-size: 1.8rem;
       }
       p {
-        font-size: 1.5rem;
-        max-width: 700px;
+        font-size: 1rem;
+      }
+      .emoji {
+        font-size: 2.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <canvas id="bg"></canvas>
-  <h1>🚀 Vandit Shah</h1>
-  <p>My digital playground is getting ready. <br>This will be home to a journey. Stay tuned :]</p>
-  <button class="glow" onclick="alert('Magic Loading...')">Coming Soon</button>
-  <script>
-    const canvas = document.getElementById('bg');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-
-    function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resize);
-    resize();
-
-    const numParticles = 150;
-    for (let i = 0; i < numParticles; i++) {
-      particles.push({
-        angle: Math.random() * 2 * Math.PI,
-        radius: Math.random() * 150 + 50,
-        size: Math.random() * 2 + 0.5,
-        speed: Math.random() * 0.002 + 0.001
-      });
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const cx = canvas.width / 2;
-      const cy = canvas.height / 2;
-
-      particles.forEach(p => {
-        const x = cx + Math.cos(p.angle) * p.radius;
-        const y = cy + Math.sin(p.angle) * p.radius;
-
-        ctx.beginPath();
-        ctx.arc(x, y, p.size, 0, 2 * Math.PI);
-        ctx.fillStyle = '#00ffcc';
-        ctx.fill();
-
-        p.angle += p.speed;
-      });
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-  </script>
+  <div class="terminal-box">
+    <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Old Computer Icon">
+    <h1><span class="emoji">💾</span> vanditshah.com is booting up...</h1>
+    <p>
+      Hello world! I'm building a digital playground.<br>
+      Expect some chaos
+      🚀📈<br><br>
+      Stay connected, stay curious.<br>
+      This website is currently under construction 🛠️
+    </p>
+    <button class="button" onclick="alert('Coming soon. Bring snacks.')">Enter Terminal</button>
+  </div>
 </body>
 </html>
